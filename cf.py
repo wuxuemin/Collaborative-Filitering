@@ -94,5 +94,44 @@ if __name__ == '__main__':
             if((np.isnan(ori_data[i][j]))== False):
                 Sigma = Sigma +((score_matrix[i][j]-ori_data[i][j])**2)
     print 'Sigma:',Sigma
-
+# 计算电影的相似性计算（计算第二范数）    
+    distance1_1 = np.array([0,0,0,0])
+    distance1_2 = np.array([0,0,0,0])
+    distance1_3 = np.array([0,0,0,0])
+    distance1_4 = np.array([0,0,0,0])
+    distance1_5 = np.array([0,0,0,0])
+    distance1_6 = np.array([0,0,0,0])
+    for j in range(4):
+        distance1_1[j]=movie[0][j]-movie[1][j]
+        distance1_2[j]=movie[0][j]-movie[2][j]
+        distance1_3[j]=movie[0][j]-movie[3][j]
+        distance1_4[j]=movie[0][j]-movie[4][j]
+        distance1_5[j]=movie[0][j]-movie[5][j]
+        distance1_6[j]=movie[0][j]-movie[6][j]
+    print 'The difference between HP1 and HP2 is',LA.norm(distance1_1)
+    print 'The difference between HP1 and HP3 is',LA.norm(distance1_2)
+    print 'The difference between HP1 and TW is',LA.norm(distance1_3)
+    print 'The difference between HP1 and SW1 is',LA.norm(distance1_4)
+    print 'The difference between HP1 and SW2 is',LA.norm(distance1_5)
+    print 'The difference between HP1 and SW3 is',LA.norm(distance1_6)
+        
+    distance2_1 = np.array([0,0,0,0])
+    distance2_2 = np.array([0,0,0,0])
+    distance2_3 = np.array([0,0,0,0])
+    distance2_4 = np.array([0,0,0,0])
+    distance2_5 = np.array([0,0,0,0])
+    distance2_6 = np.array([0,0,0,0])
+    for j in range(4):
+        distance2_1[j]=movie[4][j]-movie[0][j]
+        distance2_2[j]=movie[4][j]-movie[1][j]
+        distance2_3[j]=movie[4][j]-movie[2][j]
+        distance2_4[j]=movie[4][j]-movie[3][j]
+        distance2_5[j]=movie[4][j]-movie[5][j]
+        distance2_6[j]=movie[4][j]-movie[6][j]
+    print 'The difference between SW1 and HP1 is',LA.norm(distance2_1)
+    print 'The difference between SW1 and HP2 is',LA.norm(distance2_2)
+    print 'The difference between SW1 and HP3 is',LA.norm(distance2_3)
+    print 'The difference between SW1 and TW is',LA.norm(distance2_4)
+    print 'The difference between SW1 and SW2 is',LA.norm(distance2_5)
+    print 'The difference between SW1 and SW3 is',LA.norm(distance2_6)
   
